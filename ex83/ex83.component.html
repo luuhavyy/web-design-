@@ -1,0 +1,15 @@
+<p>binding two-way works!</p>
+<p>Name: <input type="text" [(ngModel)]="name"></p>
+<p>Your name: {{name}}</p>
+<hr>
+<p>Address: <input type="text" [(ngModel)]="address"></p>
+<p>Your address: {{address}}</p>
+<button (click)="setDefaultAddress()">Set default</button>
+<hr>
+<p>Email: <input type="text" [(ngModel)]="email"></p>
+<p>Your email: {{email}}</p>
+<button (click)="setDefaultEmail()">Set Default Email</button>
+<hr>
+<p>Phone: <input type="text" [(ngModel)]="phone"></p>
+<p>Your phone: {{phone}}</p>
+<button (click)="setDefaultPhone()">Set Default Phone</button>
