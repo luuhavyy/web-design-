@@ -1,0 +1,5 @@
+[
+    {"ProductId":"p1","ProductName":"Coca","Price":100,"Image":"assets/ex90/img/h1.jpg"},
+    {"ProductId":"p2","ProductName":"Pepsi","Price":300,"Image":"assets/ex90/img/h2.jpg"},
+    {"ProductId":"p3","ProductName":"Sting","Price":200,"Image":"assets/ex90/img/h3.jpg"}
+    ]

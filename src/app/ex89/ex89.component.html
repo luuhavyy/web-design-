@@ -1,0 +1,39 @@
+<table class="bordered">
+    <thead>
+      <tr>
+        <th>Ma Danh Muc</th>
+        <th>Ten Danh Muc</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let c of datas">
+      <tr>
+        <td>{{c.Cateid}}</td>
+        <td>{{c.CateName}}</td>
+      </tr>
+  
+      <!-- Hiển thị các sản phẩm cho mỗi danh mục -->
+      <tr>
+        <td colspan="2">
+          <table class="bordered" width="100%">
+            <thead>
+              <tr>
+                <th>Product Id</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Image</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let p of c.Products">
+                <td>{{p.ProductId}}</td>
+                <td>{{p.ProductName}}</td>
+                <td>{{p.Price}}</td>
+                <td><img src="{{p.Image}}" alt="{{p.ProductName}}" width="50" height="50"></td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  
