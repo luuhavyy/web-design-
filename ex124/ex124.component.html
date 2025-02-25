@@ -1,0 +1,27 @@
+<div class="upload-container">
+    <input type="file" class="file-input" (change)="onFileSelected($event)" #fileUpload name="image" hidden>
+    
+    <div class="upload-box">
+      <span class="file-name">{{ fileName || "No file uploaded yet." }}</span>
+      <button mat-mini-fab color="primary" class="upload-btn" (click)="fileUpload.click()">
+        📤 Upload
+      </button>
+    </div>
+  
+  <h3>📸 Album</h3>
+  
+  <div class="album">
+    <div *ngFor="let image of imageList" class="image-container">
+        <img [src]="'http://localhost:3001' + image.url" alt="{{ image.filename }}">
+        <div class="image-info">
+        <p>{{ image.filename }}</p>
+        
+      </div>
+    </div>
+  </div>
+  
+  <!-- Hiển thị lỗi nếu có -->
+  <div *ngIf="errMessage" class="error-message">
+    <p>⚠️ {{ errMessage }}</p>
+  </div>
+  
