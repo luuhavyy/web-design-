@@ -1,0 +1,46 @@
+<div class="container">
+    <h2>Upload Hình Ảnh</h2>
+  
+    <!-- Chọn file -->
+    <input type="file" (change)="onFileSelected($event)" />
+  
+    <!-- Chọn nhóm -->
+    <label for="groupSelect">Chọn nhóm:</label>
+    <select id="groupSelect" [(ngModel)]="selectedGroup">
+      <option value="1">Nhóm 1</option>
+      <option value="2">Nhóm 2</option>
+    </select>
+  
+    <!-- Nút upload -->
+    <button (click)="uploadImage()" [disabled]="uploading">
+      {{ uploading ? 'Uploading...' : 'Upload' }}
+    </button>
+  
+    <!-- Hiển thị tiến trình upload -->
+    <div *ngIf="uploading" class="progress-bar">
+      Đang tải lên: {{ progress }}%
+    </div>
+  
+    <hr />
+  
+    <!-- Danh sách ảnh Nhóm 1 -->
+    <h3>Nhóm 1</h3>
+    <div class="image-gallery">
+      <div *ngFor="let img of imagesGroup1" class="image-item">
+        <img [src]="'http://localhost:3001' + img.url" [alt]="img.filename" />
+        <p>{{ img.filename }}</p>
+      </div>
+    </div>
+  
+    <hr />
+  
+    <!-- Danh sách ảnh Nhóm 2 -->
+    <h3>Nhóm 2</h3>
+    <div class="image-gallery">
+      <div *ngFor="let img of imagesGroup2" class="image-item">
+        <img [src]="'http://localhost:3001' + img.url" [alt]="img.filename" />
+        <p>{{ img.filename }}</p>
+      </div>
+    </div>
+  </div>
+  
